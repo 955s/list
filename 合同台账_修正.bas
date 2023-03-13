@@ -342,26 +342,6 @@ Sub 修正合同台账包件()
     End With
 End Sub
 
-Sub 修正合同台账()
-    Dim StartTime
-    StartTime = Timer
-    
-    Worksheets("上报告").Activate
-    Call 合同台账格式
-    Call 修正合同台账包件
-    
-    MsgBox Timer - StartTime
-End Sub
 
-Sub 合同台账排序()
-    Dim rng As Range
-    Worksheets("上报告").Activate
-    With Worksheets("上报告")
-    x = .Range("V" & Rows.Count).End(xlUp).Row
-    Set rng = .Range("U1:X" & x)
-    rng.Sort Key1:="包件号", Order1:=xlAscending, Header:=xlYes
-    
-    End With
-End Sub
 
 
