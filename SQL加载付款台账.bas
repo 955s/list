@@ -45,7 +45,6 @@ Sub 替换付款台账合同名称()
     Worksheets("上报告").Activate
     x = Worksheets("上报告").Range("AB" & Rows.Count).End(xlUp).Row
     With Worksheets("上报告").Range("AB2:AB" & x)
-        .Select
         .Replace What:="长沙西站项目自购物资采购合同（", Replacement:="", SearchOrder:=xlByColumns
         .Replace What:="）", Replacement:="", SearchOrder:=xlByColumns
         .Replace What:=" ", Replacement:="", SearchOrder:=xlByColumns
@@ -56,22 +55,20 @@ Sub 替换付款台账客商名称()
     Worksheets("上报告").Activate
     x = Worksheets("上报告").Range("AD" & Rows.Count).End(xlUp).Row
     With Worksheets("上报告").Range("AD2:AD" & x)
-        .Select
         .Replace What:="本级", Replacement:="", SearchOrder:=xlByColumns
     End With
 End Sub
 
 Sub 付款台账格式()
     Application.ScreenUpdating = False
+    Dim n, 序号
+    dq = Worksheets("上报告").Name
+    x = Worksheets("上报告").Range("Z" & Rows.Count).End(xlUp).Row
     With Worksheets("上报告")
         If Worksheets("上报告").AutoFilterMode = True Then Selection.AutoFilter '如果有筛选就先取消筛选
-        Dim n, 序号
-        dq = Worksheets("上报告").Name
-        x = Worksheets("上报告").Range("Z" & Rows.Count).End(xlUp).Row
         .Range("Z1:AJ" & x).Font.Size = 10 '指定区域字号
         .Range("Z1:AJ" & x).HorizontalAlignment = xlCenter '居中
-        .Range("AE2:AI" & x).Select
-        Selection.NumberFormatLocal = "0.00_ ;[红色]-0.00 "
+        .Range("AE2:AI" & x).NumberFormatLocal = "0.00_ ;[红色]-0.00 "
         .Range("Z2").Select
     End With
 End Sub

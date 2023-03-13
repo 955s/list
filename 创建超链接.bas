@@ -1,43 +1,43 @@
-Attribute VB_Name = "´´½¨³¬Á´½Ó"
-Sub ´´½¨³¬Á´½Ó()
-    '²»ÒªÓÃ´¿Êı×Ö×ö±íÃû×Ö ·ñÔò±¨´í
-    Application.ScreenUpdating = False   '½ûË¢ĞÂ
+Attribute VB_Name = "åˆ›å»ºè¶…é“¾æ¥"
+Sub åˆ›å»ºè¶…é“¾æ¥()
+    'ä¸è¦ç”¨çº¯æ•°å­—åšè¡¨åå­— å¦åˆ™æŠ¥é”™
+    Application.ScreenUpdating = False   'ç¦åˆ·æ–°
 
-    If ActiveSheet.Name = "Í¸ÊÓ±í" Then 'ÅĞ¶ÏÖ»ÓĞ¼¤»îÁË×ÜË÷Òı±í²Å¸üĞÂÄ¿Â¼
+    If ActiveSheet.Name = "é€è§†è¡¨" Then 'åˆ¤æ–­åªæœ‰æ¿€æ´»äº†æ€»ç´¢å¼•è¡¨æ‰æ›´æ–°ç›®å½•
 
-        Set shtIndex = ThisWorkbook.Sheets("Í¸ÊÓ±í") 'Îª·½±ãÖ®ºóµ÷ÓÃ£¬¶¨ÒåË÷Òı±íÃû
+        Set shtIndex = ThisWorkbook.Sheets("é€è§†è¡¨") 'ä¸ºæ–¹ä¾¿ä¹‹åè°ƒç”¨ï¼Œå®šä¹‰ç´¢å¼•è¡¨å
 
-        For i = 1 To ThisWorkbook.Worksheets.Count ''±éÀúËùÓĞ¹¤×÷±í
+        For i = 1 To ThisWorkbook.Worksheets.Count ''éå†æ‰€æœ‰å·¥ä½œè¡¨
 
-            shtIndex.Cells(i, 17).Select 'Ñ¡ÖĞµÚ¶şÁĞµÄµ¥Ôª¸ñ
+            shtIndex.Cells(i, 17).Select 'é€‰ä¸­ç¬¬äºŒåˆ—çš„å•å…ƒæ ¼
 
             With Selection:
                 
 
-                .Value = ThisWorkbook.Worksheets(i).Name 'Ñ¡ÖĞµÄµ¥Ôª¸ñ¸³Óè¹¤×÷±íÃû³Æ
+                .Value = ThisWorkbook.Worksheets(i).Name 'é€‰ä¸­çš„å•å…ƒæ ¼èµ‹äºˆå·¥ä½œè¡¨åç§°
 
-                'ÔÚµ¥Ôª¸ñÖĞ¼ÓÉÏ³¬Á´£¬Á´½Óµ½Ä¿±ê¹¤×÷±íµÄA1µ¥Ôª¸ñ
+                'åœ¨å•å…ƒæ ¼ä¸­åŠ ä¸Šè¶…é“¾ï¼Œé“¾æ¥åˆ°ç›®æ ‡å·¥ä½œè¡¨çš„A1å•å…ƒæ ¼
 
                 .Hyperlinks.Add Anchor:=Selection, Address:="", SubAddress:=shtIndex.Cells(i, 17).Value & "!A1", TextToDisplay:=shtIndex.Cells(i, 17).Value
 
             End With
             
-        Next '½áÊøÑ­»·
+        Next 'ç»“æŸå¾ªç¯
         
     End If
-    x = Sheets("Í¸ÊÓ±í").Range("Q" & Rows.Count).End(xlUp).Row '²éÑ¯µ±Ç°±íÕ¼ÓÃµÄĞĞ
-    y = Sheets("Í¸ÊÓ±í").Range("N" & Rows.Count).End(xlUp).Row '²éÑ¯µ±Ç°±íÕ¼ÓÃµÄĞĞ
+    x = Sheets("é€è§†è¡¨").Range("Q" & Rows.Count).End(xlUp).Row 'æŸ¥è¯¢å½“å‰è¡¨å ç”¨çš„è¡Œ
+    y = Sheets("é€è§†è¡¨").Range("N" & Rows.Count).End(xlUp).Row 'æŸ¥è¯¢å½“å‰è¡¨å ç”¨çš„è¡Œ
     Range("N14:N" & y).ClearContents
     
     Range("Q1:Q" & x).Select
     Selection.Cut
     Range("N14").Select
     ActiveSheet.Paste
-    y = Sheets("Í¸ÊÓ±í").Range("N" & Rows.Count).End(xlUp).Row '²éÑ¯µ±Ç°±íÕ¼ÓÃµÄĞĞ
-    Range("N14:N" & y).Font.Size = 10 'Ö¸¶¨ÇøÓò×ÖºÅ
-    Range("N14:N" & y).Font.Name = "ËÎÌå" 'Ö¸¶¨ÇøÓò×ÖÌå
-    Range("N14:N" & y).Font.FontStyle = "¼Ó´Ö" 'Ö¸¶¨ÇøÓò×ÖÌå
-    Range("N14:N" & y).HorizontalAlignment = xlRight 'ÓÒ¶ÔÆë
+    y = Sheets("é€è§†è¡¨").Range("N" & Rows.Count).End(xlUp).Row 'æŸ¥è¯¢å½“å‰è¡¨å ç”¨çš„è¡Œ
+    Range("N14:N" & y).Font.Size = 10 'æŒ‡å®šåŒºåŸŸå­—å·
+    Range("N14:N" & y).Font.Name = "å®‹ä½“" 'æŒ‡å®šåŒºåŸŸå­—ä½“
+    Range("N14:N" & y).Font.FontStyle = "åŠ ç²—" 'æŒ‡å®šåŒºåŸŸå­—ä½“
+    Range("N14:N" & y).HorizontalAlignment = xlRight 'å³å¯¹é½
     
     
 End Sub

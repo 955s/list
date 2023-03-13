@@ -51,8 +51,8 @@ Sub 获取合同台账()
     Set rs = Nothing '释放对象
     Set cnn = Nothing '释放对象
 
-    .Range("U2:X200").Interior.Pattern = xlNone '清理填充
-    .Range("U2:X200").ClearComments '清理批注
+    '.Range("U2:X200").Interior.Pattern = xlNone '清理填充
+    '.Range("U2:X200").ClearComments '清理批注
     End With
 End Sub
 
